@@ -7,6 +7,14 @@ WORKDIR /packages
 ################################################################################
 FROM alpine:3.10
 
+# Install all packages as root
+USER root
+
+# Use TLS for alpine default repo
+RUN sed -i 's|http://dl-cdn.alpinelinux.org|https://alpine.global.ssl.fastly.net|g' /etc/apk/repositories && \
+    echo "@testing https://alpine.global.ssl.fastly.net/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "@community https://alpine.global.ssl.fastly.net/alpine/edge/community" >> /etc/apk/repositories
+
 # Install alpine package manifest
 COPY packages.txt /etc/apk/
 
