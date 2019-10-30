@@ -5,7 +5,7 @@ run:
 	docker container run --attach STDOUT $(NAME):$(VERSION)
 
 interactive:
-	docker run -it $(NAME):$(VERSION) /bin/sh
+	docker run -it $(NAME):$(VERSION) /bin/zsh
 
 build:
 	docker build -t $(NAME):$(VERSION) .
