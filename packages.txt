@@ -1,2 +1,9 @@
 # apk packages to be added to image at build time
+busybox-extras
+coreutils
+curl
+git
+make
+tmux
+vim
 zsh
