@@ -1,9 +1,11 @@
 # apk packages to be added to image at build time
+bash
 busybox-extras
 coreutils
 curl
 git
 make
+man-db@testing
 tmux
 vim
 zsh

@@ -26,3 +26,9 @@ COPY --from=packages /packages/bin /usr/local/bin/
 
 # copy root file system customizations
 COPY rootfs/ /
+
+# copy documentation
+COPY docs/ /usr/share/docs/
+
+# build man pages
+RUN /usr/local/bin/docs update
