@@ -12,3 +12,11 @@ tmux
 variant@cloudposse
 vim
 zsh
+zsh-autosuggestions
+zsh-calendar
+zsh-doc
+zsh-history-substring-search@testing
+zsh-syntax-highlighting
+zsh-syntax-highlighting-doc
+zsh-vcs
+zsh-zftp

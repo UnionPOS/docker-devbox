@@ -5,7 +5,8 @@ run:
 	docker container run --attach STDOUT $(NAME):$(VERSION)
 
 interactive:
-	docker run -it $(NAME):$(VERSION) /bin/zsh
+	docker run -it $(NAME):$(VERSION) /bin/zsh -l
+	# -l is needed to load shell rc files on login
 
 build:
 	docker build -t $(NAME):$(VERSION) .

@@ -7,6 +7,9 @@ WORKDIR /packages
 ################################################################################
 FROM alpine:3.10
 
+# ENV ZDOTDIR=/root
+ENV SHELL=/bin/zsh
+
 # Install all packages as root
 USER root
 
@@ -36,3 +39,9 @@ COPY docs/ /usr/share/docs/
 
 # build man pages
 RUN /usr/local/bin/docs update
+
+# rewrite root shell to zsh
+RUN sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd
+
+# install antibody shell plugin manager
+RUN curl -sfL git.io/antibody | sh -s - -b /usr/local/bin

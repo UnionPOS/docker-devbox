@@ -1,0 +1,26 @@
+
+# This ZSH plugin enhances the terminal environment with 256 colors
+antibody bundle russelltsherman/zsh-256color
+
+# Because your terminal should be able to perform tasks asynchronously without external tools!
+antibody bundle russelltsherman/zsh-async
+
+# Jump back to a specific directory, without doing `cd ../../..`
+antibody bundle russelltsherman/zsh-bd
+
+# a collection of aliases for docker commands
+antibody bundle russelltsherman/zsh-docker-aliases
+
+# A modified version of oh-my-zsh's plugin colored-man-pages, optimized for solarized dark theme in terminal
+antibody bundle russelltsherman/zsh-solarized-man
+
+# A Zsh prompt for Astronauts
+antibody bundle russelltsherman/zsh-spaceship-prompt
+
+# Tracks your most used directories, based on 'frecency'.
+antibody bundle russelltsherman/zsh-z
+
+# Additional completion definitions for Zsh.
+antibody bundle zsh-users/zsh-completions
+
+
