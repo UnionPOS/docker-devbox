@@ -1,15 +1,16 @@
-NAME = unionpos/devbox
-VERSION = 0.0.1
+-include $(shell curl -sSL -o .build-harness "https://raw.githubusercontent.com/unionpos/build-harness/master/templates/Makefile.build-harness"; echo .build-harness)
+
+export DOCKER_ORG ?= unionpos
+export DOCKER_IMAGE ?= $(DOCKER_ORG)/devbox
+export DOCKER_TAG ?= 0.0.1
+export DOCKER_IMAGE_NAME ?= $(DOCKER_IMAGE):$(DOCKER_TAG)
+export DOCKER_BUILD_FLAGS =
+
+build: docker/build
 
 run:
-	docker container run --attach STDOUT $(NAME):$(VERSION)
+	docker container run --rm --attach STDOUT ${DOCKER_IMAGE_NAME}
 
-interactive:
-	docker run -it $(NAME):$(VERSION) /bin/zsh -l
+it:
+	docker run -it ${DOCKER_IMAGE_NAME} /bin/zsh -l
 	# -l is needed to load shell rc files on login
-
-build:
-	docker build -t $(NAME):$(VERSION) .
-
-push:
-	docker push $(NAME):$(VERSION)
