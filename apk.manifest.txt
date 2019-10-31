@@ -3,9 +3,12 @@ bash
 busybox-extras
 coreutils
 curl
+fzf@cloudposse
 git
 make
 man-db@testing
+pandoc@cloudposse
 tmux
+variant@cloudposse
 vim
 zsh
