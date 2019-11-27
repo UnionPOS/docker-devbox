@@ -11,14 +11,13 @@
   -->
 # Docker DevBox
 
-
-
 Dockerfile for DevBox
 
 ## Quick Start
 
 Here's how to get started...
 
+1. ensure you have a [baseline configuration](https://github.com/UnionPOS/baseline/)
 1. `git clone https://github.com/UnionPOS/docker-devbox` to pull down the repository
 1. `make init` to initialize the [`build-harness`](https://github.com/UnionPOS/build-harness/)
 
