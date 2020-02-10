@@ -13,9 +13,13 @@ build: docker/build
 docs: readme/deps readme
 .PHONY: docs
 
+push:
+	$(DOCKER) push $(DOCKER_IMAGE_NAME)
+.PHONY: push
+
 run:
-	docker container run --rm --attach STDOUT ${DOCKER_IMAGE_NAME}
+	$(DOCKER) container run --rm --attach STDOUT ${DOCKER_IMAGE_NAME}
 
 it:
-	docker run -it ${DOCKER_IMAGE_NAME} /bin/zsh -l
+	$(DOCKER) run -it ${DOCKER_IMAGE_NAME} /bin/zsh -l
 	# -l is needed to load shell rc files on login
